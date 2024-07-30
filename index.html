@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Montagne Experience</title>
+</head>
+
+<body>
+    
+    <div id="formWrapper">
+
+        <div id="form">
+            <div class="logo">
+                <img src="./media/logo.webp" alt="logo">
+            </div>
+            <div class="form-item">
+                <p class="formLabel">Nombre</p>
+                <input type="email" name="email" id="email" class="form-style" autocomplete="off" />
+            </div>
+            <div class="form-item">
+                <p class="formLabel">Apellido</p>
+                <input type="email" name="email" id="email" class="form-style" autocomplete="off" />
+            </div>
+            <div class="form-item">
+                <p class="formLabel">Telefono</p>
+                <input type="email" name="email" id="email" class="form-style" autocomplete="off" />
+            </div>
+            <div class="form-item">
+                <p class="formLabel">¿Qué producto buscaba?</p>
+                <input type="email" name="email" id="email" class="form-style" autocomplete="off" />
+            </div>
+            <div class="form-item">
+                <a href="./discount/discount.html">
+                    <input type="submit" class="login pull-right" value="Enviar">
+                </a>
+                <div class="clear-fix"></div>
+                <p class="text_discount">Al finalizar recibirá un cupón de descuento exclusivo!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input.form-style').focus(function() {
+                $(this).prev('.formLabel').addClass('formTop');
+            });
+    
+            $('input.form-style').blur(function() {
+                if ($(this).val() === '') {
+                    $(this).prev('.formLabel').removeClass('formTop');
+                }
+            });
+    
+            $('input.form-style').each(function() {
+                if ($(this).val() !== '') {
+                    $(this).prev('.formLabel').addClass('formTop');
+                }
+            });
+
+            $('#myForm').submit(function(event) {
+                event.preventDefault(); // Prevenir el envío del formulario
+                window.location.href = './discount/discount.html'; // Redirigir a nuevo_archivo.html
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
